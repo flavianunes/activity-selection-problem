@@ -4,11 +4,11 @@ from random import randint
 # Aleatorio
 def random(n):
     for i in range(0, 10):
-        file = open('../instancias/random'+ str(i+1) +'.txt', "w")
+        file = open('../instancias/random'+ str(n) + '-' + str(i+1) + '.txt', "w")
         file.write(str(n) + '\n')
         for j in range (0, n):
             s = randint(0, 20 * n)
-            f = randint(s + 1, 20 * n) #garantir que o tempo final vem depois do inicial
+            f = randint(s + 1, 21 * n) #garantir que o tempo final vem depois do inicial
             file.write(str(s) + ' ' + str(f) + '\n')
         file.close()
 
@@ -17,7 +17,7 @@ def optimistic(n, c):
     s = 0
     f = c
     for i in range(0, 10):
-        file = open('../instancias/optimistic'+ str(i+1) +'.txt', "w")
+        file = open('../instancias/optimistic'+ str(n) + '-' + str(i+1) +'.txt', "w")
         file.write(str(n) + '\n')
         for j in range (0, n):
             file.write(str(s) + ' ' + str(f) + '\n')
@@ -28,7 +28,7 @@ def optimistic(n, c):
 # Pessimista 
 def pessimist(n, c):
     for i in range(0, 10):
-        file = open('../instancias/pessimist'+ str(i+1) +'.txt', "w")
+        file = open('../instancias/pessimist'+ str(n) + '-' + str(i+1) +'.txt', "w")
         file.write(str(n) + '\n')
         for j in range (0, n):
             s = randint(0, c)
@@ -37,7 +37,14 @@ def pessimist(n, c):
         file.close()
     
 
-random(2)
-optimistic(4, 3)
-pessimist(10, 5)
+random(10)
+random(200)
+random(1000)
 
+optimistic(10, 3)
+optimistic(200, 3)
+optimistic(1000, 3)
+
+pessimist(10, 5)
+pessimist(200, 10)
+pessimist(1000, 200)
