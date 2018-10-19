@@ -1,8 +1,9 @@
 # coding: utf-8
 
-compativeis = []
+
 
 def selecao(atividades, n):
+    compativeis = []
     atividades.sort(key=lambda x: x[1])
     i = 1
     compativeis.append(atividades[0])
@@ -13,3 +14,4 @@ def selecao(atividades, n):
             compativeis.append(atividades[m])
     print compativeis
        
+selecao([(1,2),(3,4), (1,1)], 3)
