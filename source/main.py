@@ -5,6 +5,7 @@ import sys
 import guloso
 import dinamico
 import backtracking
+import timeit
 
 if len(sys.argv) < 3:
     print ("Por favor, confira se está fornecendo o nome do arquivo de instância e o método como parâmetros")
@@ -32,13 +33,22 @@ assert n == len(atividades)
 
 # Execução do método
 if metodo == 'guloso':
+    start = timeit.default_timer()
     guloso.selecao(atividades, n)
+    stop = timeit.default_timer()
+    print('Tempo: ' + str(stop - start) + ' segundos')
 
 elif metodo == 'dinamico':
+    start = timeit.default_timer()
     dinamico.selecao(atividades, n)
+    stop = timeit.default_timer()
+    print('Tempo: ' + str(stop - start) + ' segundos')
     
 elif metodo == 'backt':
+    start = timeit.default_timer()
     backtracking.selecao(atividades, n)
+    stop = timeit.default_timer()
+    print('Tempo: ' + str(stop - start) + ' segundos')
     
 else:
     print("Método não reconhecido")
