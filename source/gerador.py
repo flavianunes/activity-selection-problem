@@ -1,0 +1,43 @@
+# coding: utf-8
+from random import randint
+
+# Aleatorio
+def random(n):
+    for i in range(0, 10):
+        file = open('../instancias/random'+ str(i+1) +'.txt', "w")
+        file.write(str(n) + '\n')
+        for j in range (0, n):
+            s = randint(0, 20 * n)
+            f = randint(s + 1, 20 * n) #garantir que o tempo final vem depois do inicial
+            file.write(str(s) + ' ' + str(f) + '\n')
+        file.close()
+
+# Otimista 
+def optimistic(n, c):
+    s = 0
+    f = c
+    for i in range(0, 10):
+        file = open('../instancias/optimistic'+ str(i+1) +'.txt', "w")
+        file.write(str(n) + '\n')
+        for j in range (0, n):
+            file.write(str(s) + ' ' + str(f) + '\n')
+            s = f + 1
+            f += c
+        file.close()
+
+# Pessimista 
+def pessimist(n, c):
+    for i in range(0, 10):
+        file = open('../instancias/pessimist'+ str(i+1) +'.txt', "w")
+        file.write(str(n) + '\n')
+        for j in range (0, n):
+            s = randint(0, c)
+            f = randint(c, 20 * n) #constante deve ser menor que 20n, se nao -> erro
+            file.write(str(s) + ' ' + str(f) + '\n')
+        file.close()
+    
+
+random(2)
+optimistic(4, 3)
+pessimist(10, 5)
+
