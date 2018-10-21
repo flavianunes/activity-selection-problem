@@ -1,8 +1,8 @@
 # coding: utf-8
-
-
+# guloso.py
 
 def selecao(atividades, n):
+    
     compativeis = []
     atividades.sort(key=lambda x: x[1])
     i = 0
@@ -14,5 +14,4 @@ def selecao(atividades, n):
             compativeis.append(atividades[m])
             i = m
     print compativeis
-       
-#selecao([(1,2),(3,4), (1,1)], 3)
+    
