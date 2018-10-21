@@ -24,9 +24,12 @@ valores = linha.split()
 n = int(valores[0])
 atividades = []
 
+index = 1
+
 for linha in referencia_arquivo:
     valores = linha.split()
-    atividades.append((int(valores[0]), int(valores[1])))
+    atividades.append((index, int(valores[0]), int(valores[1])))
+    index = index + 1
 
 # Garantindo que a instância tem o tamanho correto
 assert n == len(atividades)

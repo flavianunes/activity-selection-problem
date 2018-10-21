@@ -2,10 +2,10 @@
 
 def selecao(atividades, n):
     """
-    atividades é uma lista de tuplas. n é o tamanho da lista. Use
+    atividades é uma lista de triplas. n é o tamanho da lista. Use
     
-    inicio, fim = atividades[posicao]
+    num_tarefa, inicio, fim = atividades[posicao]
     
-    para colher os tempos de uma atividade
+    para colher os tempos e o índice de uma atividade
     """
  
