@@ -12,6 +12,7 @@ def selecao(atividades, n):
         s2, f2 = atividades[i]
         if s1 >= f2:
             compativeis.append(atividades[m])
+            i = m
     print compativeis
        
 #selecao([(1,2),(3,4), (1,1)], 3)
