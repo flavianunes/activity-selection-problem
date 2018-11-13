@@ -38,13 +38,13 @@ def pessimist(n, c):
     
 
 random(10)
-random(200)
-random(1000)
+random(15)
+random(20)
 
 optimistic(10, 3)
-optimistic(200, 3)
-optimistic(1000, 3)
+optimistic(15, 3)
+optimistic(20, 3)
 
 pessimist(10, 5)
-pessimist(200, 10)
-pessimist(1000, 200)
+pessimist(15, 10)
+pessimist(20, 200)
