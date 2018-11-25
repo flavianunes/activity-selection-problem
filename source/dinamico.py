@@ -45,7 +45,6 @@ def resolve(indice, tempo_final, atv):
         
     tabela_quantidades[indice][tempo_final] = max(v1,v2)
     
-    print '%d %d %d' % (indice, tempo_final, tabela_quantidades[indice][tempo_final])
     return tabela_quantidades[indice][tempo_final]
     
 def resultado(indice, tempo_final, atv):
